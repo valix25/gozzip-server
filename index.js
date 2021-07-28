@@ -12,6 +12,9 @@ const typeDefs = require("./graphql/typeDefs");
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // we get a request and we want to forward that request, with this the request will be forwarded
+  // to the context, so now we can access the request body in our context
+  context: ({ req }) => ({ req }),
 });
 
 // connect to the MongoDB database
