@@ -1,6 +1,11 @@
 // Apollo Server is an open-source, spec-compliant GraphQL server.
 // It's the best way to build a production-ready, self-documenting GraphQL API that can use data from any source.
 const { ApolloServer } = require("apollo-server");
+
+// PubSub not included by default anymore in apollo-werver
+// const { PubSub } = require("apollo-server");
+// const { PubSub } = require("graphql-subscriptions");
+
 // mongoose ODM wrapper which let's us interface with the MongoDB database
 const mongoose = require("mongoose");
 
@@ -8,6 +13,8 @@ const mongoose = require("mongoose");
 const { MONGODB } = require("./config.js");
 const resolvers = require("./graphql/resolvers");
 const typeDefs = require("./graphql/typeDefs");
+
+// const pubsub = new PubSub();
 
 const server = new ApolloServer({
   typeDefs,
