@@ -10,6 +10,8 @@ module.exports = gql`
     # we require that we return an array even if it might be empty
     comments: [Comment]!
     likes: [Like]!
+    likeCount: Int!
+    commentCount: Int!
   }
   type Comment {
     id: ID!
