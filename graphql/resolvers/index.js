@@ -1,5 +1,6 @@
 const postsResolvers = require("./posts");
 const usersResolvers = require("./users");
+const commentsResolvers = require("./comments");
 
 /*
 Practically speaking, the GraphQL layer lives between the client and one or more data sources, 
@@ -12,5 +13,6 @@ module.exports = {
   Mutation: {
     ...usersResolvers.Mutation,
     ...postsResolvers.Mutation,
+    ...commentsResolvers.Mutation,
   },
 };
